@@ -1,0 +1,34 @@
+- title: DeadLock Ransomware Threat Hunting Research
+  description: DeadLock operations, decentralized recovery infrastructure, attack flow, and behavior-led hunting hypotheses.
+  category: Ransomware
+  date: 2026-08-27
+  read_time: 23
+  url: /docs/deadlock-ransomware/DeadLock-Ransomware-Hunting-Research.html
+
+- title: Medusa Ransomware Threat Hunting Research
+  description: Medusa intrusion patterns, double-extortion activity, actor context, and detection opportunities.
+  category: Ransomware
+  date: 2026-08-24
+  read_time: 22
+  url: /docs/medusa-ransomware/Medusa-Ransomware-Hunting-Research.html
+
+- title: Transparent Tribe APT36 Threat Actor Hunting Research
+  description: APT36 targeting, evolving malware, campaign tradecraft, and durable behavioral indicators.
+  category: Threat actor
+  date: 2026-08-15
+  read_time: 22
+  url: /docs/trasparent-tribe-threat-actor/Transparent-Tribe-APT36-Hunting-Research.html
+
+- title: Gentlemen Ransomware-as-a-Service Threat Research
+  description: The Gentlemen affiliate ecosystem, domain-wide deployment methods, attack flow, and hunting guidance.
+  category: Ransomware
+  date: 2026-08-01
+  read_time: 24
+  url: /docs/gentlemen-raas/Gentlemen-Ransomware-Hunting-Research.html
+
+- title: Cobalt Strike Threat Hunting Research
+  description: Adversary use of Cobalt Strike, resilient detection surfaces, evasion methods, and hunting hypotheses.
+  category: Adversary tooling
+  date: 2026-07-25
+  read_time: 28
+  url: /docs/cobat-strike-tool/Cobalt-Strike-Threat-Hunting-Research.html

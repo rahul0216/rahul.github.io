@@ -1,137 +1,45 @@
 ---
-title: Welcome
-description: Practical cybersecurity knowledge, served in small bites.
+title: Home
+description: Independent threat research and practical hunting guidance for security teams.
 ---
 
-<div class="site-shell">
-  <header class="site-header" aria-label="Primary navigation">
-    <a class="brand" href="{{ '/' | relative_url }}" aria-label="Sec Bites home">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 32 32" role="img">
-          <path d="M16 2.5 27 7v7.6c0 7.1-4.6 12.3-11 14.9-6.4-2.6-11-7.8-11-14.9V7l11-4.5Z" fill="none" stroke="currentColor" stroke-width="2"/>
-          <path d="m11.2 16 3.1 3.1 6.8-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </span>
-      <span>SEC<span class="brand-accent">/</span>BITES</span>
-    </a>
+{% include header.html %}
 
-    <nav class="nav-links" aria-label="Site links">
-      <a href="#about">About</a>
-      <a href="#topics">Topics</a>
-      <a class="nav-cta" href="https://github.com/{{ site.repository }}">View on GitHub</a>
-    </nav>
-  </header>
+<main id="main-content">
+  <section class="intro" aria-labelledby="intro-title">
+    <p class="kicker">Threat research / Field notes</p>
+    <h1 id="intro-title">Research for defenders.</h1>
+    <p class="intro-copy">Focused analysis of threat actors, ransomware operations, and adversary tooling. Each report turns public evidence into practical hunting guidance for Microsoft Defender XDR and Sentinel.</p>
+  </section>
 
-  <main id="main-content">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Knowledge is your first line of defense</p>
-        <h1 id="hero-title">Security insights.<br><span>One bite at a time.</span></h1>
-        <p class="hero-intro">Clear, focused lessons that turn complex cybersecurity ideas into practical knowledge you can use.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#topics">
-            Explore the topics
-            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a class="button button-secondary" href="https://github.com/{{ site.repository }}">Follow the project</a>
-        </div>
-      </div>
+  <section class="research" id="research" aria-labelledby="research-title">
+    <div class="section-header">
+      <h2 id="research-title">Latest research</h2>
+      <p>{{ site.data.articles | size }} reports</p>
+    </div>
 
-      <div class="hero-visual" aria-label="Security status terminal illustration">
-        <div class="orb orb-one"></div>
-        <div class="orb orb-two"></div>
-        <div class="terminal-card">
-          <div class="terminal-bar">
-            <div class="terminal-dots" aria-hidden="true"><span></span><span></span><span></span></div>
-            <span>security-check.sh</span>
-            <span class="terminal-lock" aria-hidden="true">&#9679;</span>
-          </div>
-          <div class="terminal-body" aria-hidden="true">
-            <p><span class="prompt">$</span> sec-bites scan --knowledge</p>
-            <p><span class="muted">[01/04]</span> Checking fundamentals... <span class="success">OK</span></p>
-            <p><span class="muted">[02/04]</span> Mapping attack surface... <span class="success">OK</span></p>
-            <p><span class="muted">[03/04]</span> Applying secure patterns... <span class="success">OK</span></p>
-            <p><span class="muted">[04/04]</span> Building better habits... <span class="success">OK</span></p>
-            <div class="terminal-result">
-              <span class="shield-mini">✓</span>
-              <div><strong>You're cleared to learn.</strong><small>New insights are on the way.</small></div>
+    <div class="article-list">
+      {% for article in site.data.articles %}
+        <article class="article-card">
+          <a href="{{ article.url | relative_url }}" aria-label="Read {{ article.title }}">
+            <div class="article-meta">
+              <span>{{ article.category }}</span>
+              <time datetime="{{ article.date | date: '%Y-%m-%d' }}">{{ article.date | date: "%d %b %Y" }}</time>
+              <span>{{ article.read_time }} min read</span>
             </div>
-            <p><span class="prompt">$</span> <span class="cursor"></span></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="manifesto" id="about" aria-labelledby="about-title">
-      <p class="section-label">Why Sec Bites</p>
-      <h2 id="about-title">Cybersecurity should be<br><span>understood, not memorized.</span></h2>
-      <p>Sec Bites strips away the noise. Each lesson is designed to be concise enough to finish over coffee and useful enough to improve how you build, work, and think.</p>
-    </section>
-
-    <section class="topics" id="topics" aria-labelledby="topics-title">
-      <div class="section-heading">
-        <div>
-          <p class="section-label">What to expect</p>
-          <h2 id="topics-title">Small lessons. Lasting impact.</h2>
-        </div>
-        <p>Start with the essentials, sharpen your instincts, and build security into every decision.</p>
-      </div>
-
-      <div class="topic-grid">
-        <article class="topic-card">
-          <span class="topic-number">01</span>
-          <div class="topic-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.2c0 4.8 3.1 8.4 7.5 10.2 4.4-1.8 7.5-5.4 7.5-10.2V6L12 3Z"/><path d="M9.2 12.1 11 14l4-4.2"/></svg>
-          </div>
-          <h3>Security fundamentals</h3>
-          <p>Understand the core principles behind confidentiality, integrity, identity, and trust.</p>
-          <span class="topic-tag">FOUNDATIONS</span>
+            <h3>{{ article.title }}</h3>
+            <p>{{ article.description }}</p>
+            <span class="read-link">Read report <span aria-hidden="true">&rarr;</span></span>
+          </a>
         </article>
+      {% endfor %}
+    </div>
+  </section>
 
-        <article class="topic-card featured">
-          <span class="topic-number">02</span>
-          <div class="topic-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.4 2"/></svg>
-          </div>
-          <h3>Threat awareness</h3>
-          <p>Recognize common attack patterns, social engineering tactics, and emerging risks.</p>
-          <span class="topic-tag">AWARENESS</span>
-        </article>
+  <section class="about" id="about" aria-labelledby="about-title">
+    <h2 id="about-title">About Sec Bites</h2>
+    <p>Sec Bites publishes evidence-backed security research with clear confidence boundaries. Reports prioritize durable behaviors over short-lived indicators and include hypotheses that defenders can adapt to their own environments.</p>
+  </section>
+</main>
 
-        <article class="topic-card">
-          <span class="topic-number">03</span>
-          <div class="topic-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M8 10V7.5a4 4 0 0 1 8 0V10M6 10h12v10H6z"/><path d="M12 14v2.5"/></svg>
-          </div>
-          <h3>Secure practices</h3>
-          <p>Apply practical habits and proven patterns to protect systems, data, and people.</p>
-          <span class="topic-tag">PRACTICE</span>
-        </article>
-      </div>
-    </section>
-
-    <section class="coming-soon" aria-labelledby="soon-title">
-      <div class="radar" aria-hidden="true"><span></span><span></span><span></span><i></i></div>
-      <div>
-        <p class="section-label">Incoming transmission</p>
-        <h2 id="soon-title">The first bite is coming soon.</h2>
-        <p>Watch the repository to get notified when new security lessons land.</p>
-      </div>
-      <a class="button button-primary" href="https://github.com/{{ site.repository }}">
-        Watch on GitHub
-        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <a class="brand footer-brand" href="{{ '/' | relative_url }}" aria-label="Sec Bites home">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 32 32"><path d="M16 2.5 27 7v7.6c0 7.1-4.6 12.3-11 14.9-6.4-2.6-11-7.8-11-14.9V7l11-4.5Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m11.2 16 3.1 3.1 6.8-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </span>
-      <span>SEC<span class="brand-accent">/</span>BITES</span>
-    </a>
-    <p>Stay curious. Stay secure.</p>
-    <p>&copy; {{ 'now' | date: '%Y' }} Sec Bites</p>
-  </footer>
-</div>
+{% include footer.html %}
