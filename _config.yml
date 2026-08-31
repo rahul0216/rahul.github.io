@@ -1,0 +1,26 @@
+title: Sec Bites
+description: Practical cybersecurity knowledge, served in small bites.
+url: "https://rahul0216.github.io"
+baseurl: "/sec-bites"
+lang: en
+timezone: UTC
+
+author:
+  name: Sec Bites
+
+repository: rahul0216/sec-bites
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+
+plugins:
+  - jekyll-seo-tag
