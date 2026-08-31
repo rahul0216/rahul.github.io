@@ -360,6 +360,36 @@ a {
   background: transparent;
 }
 
+.mermaid-figure {
+  margin: 2.5rem 0;
+  padding: clamp(1rem, 3vw, 2rem);
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.mermaid-embed {
+  display: flex;
+  min-width: 620px;
+  justify-content: center;
+}
+
+.mermaid-embed svg {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.mermaid-figure figcaption {
+  margin-top: 1rem;
+  color: var(--muted);
+  font-family: ui-monospace, "Cascadia Code", "SFMono-Regular", Consolas, monospace;
+  font-size: 0.68rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .article-content table {
   display: block;
   width: 100%;
