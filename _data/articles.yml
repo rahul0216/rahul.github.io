@@ -1,3 +1,10 @@
+- title: Mimikatz Threat Research and Detection Hypotheses
+  description: Mimikatz capabilities, credential-access techniques, campaign use, evasion methods, and behavior-led detection hypotheses.
+  category: Adversary tooling
+  date: 2026-09-01
+  read_time: 25
+  url: /docs/mimikatz-tool/Mimikatz-Threat-Research-and-Detection-Hypotheses.html
+
 - title: DeadLock Ransomware Threat Hunting Research
   description: DeadLock operations, decentralized recovery infrastructure, attack flow, and behavior-led hunting hypotheses.
   category: Ransomware

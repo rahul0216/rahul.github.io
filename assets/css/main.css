@@ -6,8 +6,20 @@
   --line: #dcdcd7;
   --accent: #b23a2a;
   --code: #f0f0ec;
+  --article-text: #30302e;
   --content-width: 1120px;
   --reading-width: 760px;
+}
+
+[data-theme="dark"] {
+  --background: #151513;
+  --surface: #1c1c19;
+  --text: #eeeeea;
+  --muted: #a4a49c;
+  --line: #383834;
+  --accent: #e27968;
+  --code: #222220;
+  --article-text: #d0d0ca;
 }
 
 * {
@@ -76,6 +88,7 @@ a {
 
 .site-header nav {
   display: flex;
+  align-items: center;
   gap: clamp(1rem, 3vw, 2rem);
 }
 
@@ -88,6 +101,44 @@ a {
 .site-header nav a:hover,
 .site-header nav a:focus-visible {
   color: var(--text);
+}
+
+.theme-toggle {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--muted);
+  background: transparent;
+  cursor: pointer;
+  place-items: center;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  color: var(--text);
+  border-color: var(--muted);
+}
+
+.theme-icon {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.theme-icon-sun,
+[data-theme="dark"] .theme-icon-moon {
+  display: none;
+}
+
+[data-theme="dark"] .theme-icon-sun {
+  display: block;
 }
 
 .intro {
@@ -284,7 +335,7 @@ a {
 }
 
 .article-content {
-  color: #30302e;
+  color: var(--article-text);
 }
 
 .article-content h2,
