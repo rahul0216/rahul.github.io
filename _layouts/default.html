@@ -4,7 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f7f7f4">
-    <meta name="color-scheme" content="light">
+    <meta name="color-scheme" content="light dark">
+    <script>
+      (() => {
+        const savedTheme = localStorage.getItem("sec-bites-theme");
+        const preferredTheme = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.dataset.theme = savedTheme ?? preferredTheme;
+      })();
+    </script>
     {% seo %}
     <link rel="icon" href="{{ '/assets/images/favicon.svg' | relative_url }}" type="image/svg+xml">
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
@@ -12,5 +19,6 @@
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
     {{ content }}
+    <script src="{{ '/assets/js/theme-toggle.js' | relative_url }}" defer></script>
   </body>
 </html>
