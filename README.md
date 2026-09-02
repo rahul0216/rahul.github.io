@@ -1,10 +1,12 @@
 ---
 title: Sec Bites
-description: Practical cybersecurity knowledge, served in small bites
+description: Evidence-backed threat research and practical hunting guidance for security teams
 ---
 
-Sec Bites is a Jekyll-powered GitHub Pages site for concise, practical
-cybersecurity lessons.
+Sec Bites is a Jekyll-powered GitHub Pages site for independent research into
+threat actors, ransomware operations, phishing campaigns, and adversary tooling.
+Reports turn public evidence into behavior-led hunting guidance for Microsoft
+Defender XDR and Microsoft Sentinel.
 
 ## Local development
 
