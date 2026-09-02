@@ -1,3 +1,10 @@
+- title: NovaCookies Campaign Analysis and Threat Hunting Research
+  description: NovaCookies phishing infrastructure, session-cookie theft, attack flow, indicators, and identity-focused hunting hypotheses.
+  category: Phishing campaign
+  date: 2026-09-02
+  read_time: 12
+  url: /docs/novacookies-campaign/NovaCookies-Campaign-Hunting-Research.html
+
 - title: Mimikatz Threat Research and Detection Hypotheses
   description: Mimikatz capabilities, credential-access techniques, campaign use, evasion methods, and behavior-led detection hypotheses.
   category: Adversary tooling
