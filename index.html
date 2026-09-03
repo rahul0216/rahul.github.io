@@ -14,13 +14,27 @@ description: Independent threat research and practical hunting guidance for secu
 
   <section class="research" id="research" aria-labelledby="research-title">
     <div class="section-header">
-      <h2 id="research-title">Latest research</h2>
-      <p>{{ site.data.articles | size }} reports</p>
+      <h2 id="research-title">Research archive</h2>
+      <p id="research-count">{{ site.data.articles | size }} reports</p>
+    </div>
+
+    {% assign categories = site.data.articles | map: "category" | uniq | sort %}
+    <div class="research-tools" hidden>
+      <div class="category-filter" role="group" aria-label="Filter reports by category">
+        <button class="filter-button is-active" type="button" data-category="all" aria-pressed="true">All</button>
+        {% for category in categories %}
+          <button class="filter-button" type="button" data-category="{{ category | slugify }}" aria-pressed="false">{{ category }}</button>
+        {% endfor %}
+      </div>
+      <label class="search-field">
+        <span class="visually-hidden">Search reports</span>
+        <input id="article-search" type="search" placeholder="Search reports" autocomplete="off">
+      </label>
     </div>
 
     <div class="article-list">
       {% for article in site.data.articles %}
-        <article class="article-card">
+        <article class="article-card" data-category="{{ article.category | slugify }}" data-search="{{ article.title | append: ' ' | append: article.description | append: ' ' | append: article.category | downcase | escape }}">
           <a href="{{ article.url | relative_url }}" aria-label="Read {{ article.title }}">
             <div class="article-meta">
               <span>{{ article.category }}</span>
@@ -34,6 +48,7 @@ description: Independent threat research and practical hunting guidance for secu
         </article>
       {% endfor %}
     </div>
+    <p class="empty-results" hidden>No reports match your search.</p>
   </section>
 
   <section class="about" id="about" aria-labelledby="about-title">
@@ -43,3 +58,4 @@ description: Independent threat research and practical hunting guidance for secu
 </main>
 
 {% include footer.html %}
+<script src="{{ '/assets/js/article-filter.js' | relative_url }}" defer></script>

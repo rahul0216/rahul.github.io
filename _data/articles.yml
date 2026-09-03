@@ -1,3 +1,10 @@
+- title: Shai-Hulud Software Supply-Chain Campaign Threat Research
+  description: Shai-Hulud campaign evolution, npm propagation, credential theft, CI/CD compromise, and behavior-led hunting hypotheses.
+  category: Supply-chain campaign
+  date: 2026-09-04
+  read_time: 18
+  url: /docs/shai-hulud-campaign/Shai-Hulud-Supply-Chain-Campaign-Threat-Research.html
+
 - title: NovaCookies Campaign Analysis and Threat Hunting Research
   description: NovaCookies phishing infrastructure, session-cookie theft, attack flow, indicators, and identity-focused hunting hypotheses.
   category: Phishing campaign
