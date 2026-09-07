@@ -1,3 +1,10 @@
+- title: EvilTokens Phishing Kit Threat Research and Hunting Hypotheses
+  description: Evidence-based analysis of EvilTokens device-code phishing, campaigns, evasion, ATT&CK mappings, and detection opportunities.
+  category: Phishing kit
+  date: 2026-09-07
+  read_time: 16
+  url: /docs/eviltokens-phishing-kit/EvilTokens-Phishing-Kit-Threat-Research.html
+
 - title: Shai-Hulud Software Supply-Chain Campaign Threat Research
   description: Shai-Hulud campaign evolution, npm propagation, credential theft, CI/CD compromise, and behavior-led hunting hypotheses.
   category: Supply-chain campaign
