@@ -60,3 +60,17 @@
   date: 2026-07-25
   read_time: 28
   url: /docs/cobat-strike-tool/Cobalt-Strike-Threat-Hunting-Research.html
+
+- title: Lazarus Group Threat Actor Hunting Research
+  description: Cluster-aware analysis of Lazarus Group attack flows, campaigns, tools, indicators, and hunting hypotheses for Microsoft Defender XDR and Sentinel.
+  category: Threat actor
+  date: 2026-06-08
+  read_time: 24
+  url: /docs/lazarus-group-threat-actor/Lazarus-Group-Hunting-Research.html
+
+- title: GlassWorm Campaign Threat Research and Hunting Hypotheses
+  description: Evidence-based analysis of GlassWorm supply-chain activity, affected developer artifacts, indicators, actor profile, and detection opportunities.
+  category: Supply-chain campaign
+  date: 2026-02-08
+  read_time: 20
+  url: /docs/glassworm-campaign/GlassWorm-Campaign-Threat-Research.html
